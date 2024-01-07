@@ -19,6 +19,11 @@ button {
 	cursor: pointer;
 	user-select: none;
 }
+.sr__seo {
+	position: absolute;
+	width: 0;
+	overflow: hidden;
+}
 /* [END] Main Rules */
 
 /* [START] Animations */
