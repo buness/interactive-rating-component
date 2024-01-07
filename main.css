@@ -20,3 +20,225 @@ button {
 	user-select: none;
 }
 /* [END] Main Rules */
+
+/* [START] Animations */
+@keyframes slide {
+	0% {
+		transform: translateX(var(--translateX));
+		display: none;
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+/* [END] Animations */
+
+/* [START] Rating Component */
+
+/* [START] Shared Style */
+main {
+	max-width: 25.75rem;
+	border-radius: 1.5rem;
+	background: radial-gradient(
+		98.96% 98.96% at 50% 0%,
+		#232a34 0%,
+		#181e27 100%
+	);
+	overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+	main {
+		max-width: 20.438rem;
+		border-radius: 0.938rem;
+	}
+}
+
+main article {
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(1, -0.7, 0.18, 1.01);
+	animation-fill-mode: both;
+}
+main article h2 {
+	font-weight: 700;
+	font-size: 1.75rem;
+	color: #fff;
+	line-height: 1.266;
+}
+@media screen and (max-width: 768px) {
+	main article h2 {
+		font-size: 1.5rem;
+	}
+}
+main article p {
+	font-size: 0.938rem;
+	line-height: 1.6;
+	color: #969fad;
+}
+@media screen and (max-width: 768px) {
+	main article p {
+		font-size: 0.875rem;
+		line-height: 1.57;
+	}
+}
+/* [END] Shared Style */
+
+/* [START] Rating Slide */
+main .rating-slide {
+	padding: 2rem;
+	animation-direction: reverse;
+	--translateX: -105%;
+}
+
+@media screen and (max-width: 768px) {
+	main .rating-slide {
+		padding: 1.5rem 1.5rem 2rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	main .rating-slide header {
+		margin-bottom: 0.625rem;
+	}
+}
+main .rating-slide header span {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	background-color: #262e38;
+	margin-bottom: 1.875em;
+}
+@media screen and (max-width: 768px) {
+	main .rating-slide header span {
+		width: 2.5rem;
+		height: 2.5rem;
+		margin-bottom: 1em;
+	}
+}
+main .rating-slide section {
+	margin-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+	main .rating-slide section {
+		margin-bottom: 1.5rem;
+	}
+}
+main .rating-slide p {
+	margin-bottom: 1.5em;
+}
+main .rating-slide section ul {
+	list-style: none;
+	display: flex;
+	column-gap: 1.313rem;
+}
+@media screen and (max-width: 768px) {
+	main .rating-slide section ul {
+		column-gap: 1.063rem;
+	}
+}
+main .rating-slide section ul button {
+	border-radius: 50%;
+	width: 3.188rem;
+	height: 3.188rem;
+	background-color: #262e38;
+	color: #7c8798;
+	font-weight: 700;
+	line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+	main .rating-slide section ul button {
+		width: 2.625rem;
+		height: 2.625rem;
+		line-height: 1.71;
+	}
+}
+main .rating-slide section ul button:hover {
+	transition: all 0.3s ease-in-out;
+	background-color: #fc7614;
+}
+main .rating-slide section ul button:is(:hover, .active) {
+	color: #fff;
+}
+main .rating-slide section ul button.active {
+	background-color: #7c8798;
+}
+main .rating-slide footer button {
+	width: 100%;
+	text-transform: uppercase;
+	letter-spacing: 0.125em;
+	border-radius: 999px;
+	font-weight: 700;
+	padding: 0.75em;
+	font-size: 0.938rem;
+	line-height: 1.266;
+	background-color: #fc7614;
+	color: #fff;
+}
+@media screen and (max-width: 768px) {
+	main .rating-slide footer button {
+		font-size: 0.875rem;
+	}
+}
+main .rating-slide footer button:hover {
+	transition: all 0.3s ease-in-out;
+	color: #fc7614;
+	background-color: #fff;
+}
+main .rating-slide footer button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+/* [END] Rating Slide */
+
+/* [START] Score Slide */
+main .score-slide {
+	text-align: center;
+	padding: 2.813rem 2rem;
+	display: none;
+	--translateX: 105%;
+	animation-name: slide;
+}
+@media screen and (max-width: 768px) {
+	main .score-slide {
+		padding: 2.125rem 1.5rem;
+	}
+}
+main .score-slide h2 {
+	margin-bottom: 0.438rem;
+}
+@media screen and (max-width: 768px) {
+	main .score-slide h2 {
+		margin-bottom: 0.625rem;
+	}
+}
+@media screen and (max-width: 768px) {
+	main .score-slide header img {
+		width: 9rem;
+		height: 6rem;
+	}
+}
+main .score-slide header img {
+	width: 9rem;
+	height: 6rem;
+}
+main .score-slide #score {
+	margin: 2.1em auto;
+	display: block;
+	width: fit-content;
+	font-size: 0.938rem;
+	color: #fc7614;
+	background-color: #262e38;
+	border-radius: 999px;
+	line-height: 1.6;
+	padding: 0.25rem 1.25rem;
+}
+@media screen and (max-width: 768px) {
+	main .score-slide #score {
+		margin: 1.8em auto;
+		font-size: 0.825rem;
+		line-height: 1.571;
+	}
+}
+/* [END] Score Slide */
+
+/* [END] Rating Component */
